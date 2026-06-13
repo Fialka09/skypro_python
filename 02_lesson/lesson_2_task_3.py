@@ -1,12 +1,10 @@
 import math
 
 
-def square(side):
+def square(side: float) -> int:
+    """Вычисляет площадь квадрата. Если сторона не целая, округляет вверх."""
     area = side * side
-    if isinstance(side, int):
-        return area
-    else:
-        return math.ceil(area)
+    return math.ceil(area)
 
 
 side_length = 25.8
