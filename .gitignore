@@ -220,3 +220,4 @@ __marimo__/
 .idea/
 screenshots/
 05_lesson/
+webdriver_setup.py
