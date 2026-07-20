@@ -56,7 +56,7 @@ def test_form(edge_driver):
     # Проверка: почтовый индекс - красный
     zip_selector = "#zip-code.alert-danger"
     zip_code_field = wait.until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, zip_selector))
+        EC.visibility_of_element_located((By.CSS_SELECTOR, zip_selector))
     )
     assert zip_code_field.is_displayed(), "Zip code не отображается!"
     # Проверка: остальные поля - зелёные
@@ -73,7 +73,7 @@ def test_form(edge_driver):
     ]
     for field_id in green_field_ids:
         element = wait.until(
-            EC.presence_of_element_located(
+            EC.visibility_of_element_located(
                 (By.CSS_SELECTOR, f"#{field_id}.alert-success")
             )
         )

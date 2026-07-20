@@ -25,7 +25,10 @@ def test_calc(chrome_driver):
     press(chrome_driver, "8")
     press(chrome_driver, "=")
 
-    result = wait.until(
-        EC.text_to_be_present_in_element((By.CSS_SELECTOR, ".screen"), "15")
+    wait.until(
+        EC.text_to_be_present_in_element(
+            (By.CSS_SELECTOR, ".screen"), "15"
+        )
     )
-    assert result, "Результат должен быть 15!"
+    result = chrome_driver.find_element(By.CSS_SELECTOR, ".screen").text
+    assert result == "15", f"Ожидалось 15, получено {result}"

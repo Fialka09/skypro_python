@@ -36,7 +36,8 @@ def test_shop(firefox_driver):
     firefox_driver.find_element(
         By.CSS_SELECTOR, ".shopping_cart_link"
     ).click()
-    wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#checkout"))).click()
+    wait.until(EC.element_to_be_clickable((
+        By.CSS_SELECTOR, "#checkout"))).click()
     first_name = firefox_driver.find_element(By.CSS_SELECTOR, "#first-name")
     first_name.clear()
     first_name.send_keys("Елена")
