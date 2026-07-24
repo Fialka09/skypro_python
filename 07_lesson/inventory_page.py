@@ -16,7 +16,7 @@ class InventoryPage:
 
     def add_item(self, item_name):
         self.wait.until(
-            EC.element_to_be_clickable((By.NAME, self.ITEMS[item_name]))
+            EC.element_to_be_clickable((By.ID, self.ITEMS[item_name]))
         ).click()
 
     def add_all_items(self):

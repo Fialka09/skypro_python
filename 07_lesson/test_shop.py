@@ -27,7 +27,6 @@ def test_shop(firefox_driver):
     checkout_page = CheckoutPage(firefox_driver)
     checkout_page.fill_form()
     checkout_page.continue_order()
-    checkout_page.get_total()
 
     total = checkout_page.get_total()
     assert "Total: $58.29" in total, f"Неверная сумма: {total}"
